@@ -15,41 +15,37 @@ let isValid: boolean = sum > 10 && sum < 20;
 
 // Estructuras de decisión
 console.log("Number par and impar -------------->");
-const verifyNumberPar = (data: number) =>{
+const verifyNumberPar = (data: number):string =>{
     if(data % 2 !== 0){
-        console.log("Number impar");
-        return;
+        return ("Number impar");
     }
-    console.log("Number par");
+    return ("Number par");
 }
 
-verifyNumberPar(6);
+console.log(verifyNumberPar(6));
 
 // Estructura de iteración (While, for, forEach, map)
 console.log("Number Clasifications ----------------->")
-const clasificationNumbers = (data: number) =>{
+const clasificationNumbers = (data: number):string =>{
     if(data > 0){
-        console.log("Number positive");
-        return;
+        return ("Number positive");
     }
     if(data < 0){
-        console.log("Number negative");
-        return;
+        return("Number negative");
     }
 
     switch(data){
         case 0:
-            console.log("Number cero");
-            break;
+            return("Number cero");
         default:
-            console.log("Number invalido");
+            return("Number invalido");
     }
 
 }
 
-clasificationNumbers(3);
-clasificationNumbers(-1);
-clasificationNumbers(0);
+console.log(clasificationNumbers(3));
+console.log(clasificationNumbers(-1));
+console.log(clasificationNumbers(0));
 
 console.log("Iterable structures ------------------>");
 const showArray = (array: string[]) =>{
@@ -58,9 +54,6 @@ const showArray = (array: string[]) =>{
         console.log(name);
     });
     
-    console.log("Usign map");
-    const names = array.map(name => console.log(name));
-
     console.log("Using for");
     for(let i= 0; i < array.length; i++){
         console.log(array[i])
@@ -71,22 +64,22 @@ showArray(["jose", "cardona", "juan"]);
 console.log("data structures and functions ------------------>");
 
 console.log("Homework 1 ");
-const array = [1,2,3,5,6,7,8,9,10];
-const sumArray = (array: number[]) =>{
+const array: number[] = [1,2,3,5,6,7,8,9,10];
+const sumArray = (array: number[]):number =>{
     const sum = array.reduce((accum,value)=>{
         return accum + value
     },0)
-    console.log(sum);
+    return sum;
 }
-sumArray(array);
+console.log(sumArray(array));
 
 console.log("Homework 2 ");
 const names = ["jose", "cardona", "junior"];
-const concatNames = (array: string[]) =>{
+const concatNames = (array: string[]):string =>{
     const concatNames = array.reduce((accum,value)=>accum+""+ value);
-    console.log(concatNames);
+    return concatNames;
 }
-concatNames(names);
+console.log(concatNames(names));
 
 
 console.log("Homework 3 ");
@@ -105,24 +98,24 @@ const users:User[] = [
     }
 ]
 
-const showNameUsers = (array:User[]) =>{
+const showNameUsers = (array:User[]):void =>{
     array.forEach(nameUser=>console.log(nameUser.name));
 }
 showNameUsers(users);
 
 console.log("Homework 4 ");
-const numbers = [1,8,3,4,5,6,7];
+const numbers:number[] = [1,8,3,4,5,6,7];
 
-const numberGreater = (array: number[]) =>{
+const numberGreater = (array: number[]):number =>{
     let valueGreater = 0;
     array.forEach(number=>{
         if(number > valueGreater){
             valueGreater = number;
         }
     })
-    console.log(valueGreater);
+    return valueGreater;
 }
-const numberGreaterTwo = (array: number[]) => console.log(Math.max(...array));
+const numberGreaterTwo = (array: number[]):void => console.log(Math.max(...array));
 numberGreater(numbers);
 numberGreaterTwo(numbers)
 
@@ -156,7 +149,7 @@ class Car{
 console.log(Car.getData(car));
 
 console.log("Homework 3 ");
-const incrementYearCar = (car:Car) =>{
+const incrementYearCar = (car:Car):Car =>{
     car = {
         brand: car.brand,
         model: car.model,
@@ -170,8 +163,8 @@ console.log(incrementYearCar(car));
 console.log("Functions --------------->");
 console.log("Homework 1 ");
 
-const arrayNumber = [1,8,3,4,5,6,7];
-const greaterThan = (array: number[]) =>{
+const arrayNumber: number[] = [1,8,3,4,5,6,7];
+const greaterThan = (array: number[]):number =>{
     let valueGreater = 0;
     array.forEach(number=>{
         if(number > valueGreater){
@@ -206,12 +199,12 @@ console.log(testDataType(1,2,2));
 console.log(testDataType(1,"jose",2));
 
 console.log("Homework 3");
-const matrizCuadrada = [
+const matrizCuadrada: number[][] = [
     [1,2], 
     [3,4]
 ];
 
-const newMatrizCuadrada = [
+const newMatrizCuadrada: number[][] = [
     [0,0],
     [0,0]
 ]

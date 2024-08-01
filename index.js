@@ -196,3 +196,4 @@ const dog = new Dog("Lucas");
 console.log(animal.getName());
 console.log(dog.getName());
 //
+//# sourceMappingURL=index.js.map
