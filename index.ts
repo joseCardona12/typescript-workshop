@@ -177,7 +177,7 @@ console.log("Value greater: " + greaterThan(arrayNumber));
 
 console.log("Homework 2");
 
-const testDataType = (...numbers: any[]) =>{
+const testDataType = (...numbers: (string | number | boolean)[]) =>{
     const [typeOne, typeTwo, ...rest] = numbers;
     
     if(typeof typeOne !== typeof typeTwo){
